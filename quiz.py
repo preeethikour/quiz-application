@@ -1,24 +1,24 @@
-test=str(input("enter a name"))
+test=str(input("enter a name:"))
 class Question:
-    def __init__(self,prompt,answer):
-        self.prompt=prompt
+    def __init__(self,question,answer):
+        self.question=question
         self.answer=answer
 
-question_prompts=[
+given_question=[
   "what color are apples?\n(a)Red\n(b)Green\n (c)Orange\n your answer:",
   "what color are banana?\n(a)Red\n(b)Green\n (c)yellow\n your answer:",
 ]
 
 questions=[
-     Question(question_prompts[0],"a"),
-     Question(question_prompts[1],"c")
+     Question(given_question[0],"a"),
+     Question(given_question[1],"c")
 ]
 
 
 def run_quiz(questions):
     score=0
     for question in questions:
-         answer=input(question.prompt)
+         answer=input(question.question)
          if answer==question.answer:
             score+=1
     print("hi",test,"you got",score,"correct answer","out off",len(questions))
